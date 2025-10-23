@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sesimsek <sesimsek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 19:37:07 by sesimsek          #+#    #+#             */
-/*   Updated: 2025/10/20 20:51:57 by sesimsek         ###   ########.fr       */
+/*   Created: 2025/10/20 18:22:22 by sesimsek          #+#    #+#             */
+/*   Updated: 2025/10/20 19:35:01 by sesimsek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+int main()
 {
-	zombieName = name;
-}
+	randomChump("Stack Zombie");
 
-Zombie::Zombie()
-{
-	zombieName = "Unnamed Zombie";
-}
+	Zombie* heapZombie =  newZombie("Heap Zombie");
+	heapZombie->announce();
+	delete heapZombie;
 
-Zombie::~Zombie()
-{
-	std::cout << zombieName << " is destroyed!" << std::endl;
-}
-
-void Zombie::announce()
-{
-	std::cout << zombieName << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void Zombie::setName(std::string name , int N)
-{
-	std::stringstream ss;
-	ss << N;
-	zombieName = name + "[" +  ss.str() + "]";
+	return(0);
 }
