@@ -6,7 +6,7 @@
 /*   By: sesimsek <sesimsek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:09:53 by sesimsek          #+#    #+#             */
-/*   Updated: 2025/10/24 15:55:36 by sesimsek         ###   ########.fr       */
+/*   Updated: 2025/10/25 13:53:22 by sesimsek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ int main(int ac, char **av)
 	while(getline(source,line))
 	{
 		std::string::size_type pos = 0;
-		if((pos = line.find(s1,pos)) != std::string::npos)
+		while((pos = line.find(s1,pos)) != std::string::npos)
 		{
 			int len = s1.length();
 			line.erase(pos,len);
 			line.insert(pos,s2);
+			pos = pos + s2.length();
 		}	
 		destination << line << std::endl;
 	}
