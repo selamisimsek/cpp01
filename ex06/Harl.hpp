@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sesimsek <sesimsek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 20:37:36 by sesimsek          #+#    #+#             */
-/*   Updated: 2025/10/25 13:49:07 by sesimsek         ###   ########.fr       */
+/*   Created: 2025/10/25 11:18:23 by sesimsek          #+#    #+#             */
+/*   Updated: 2025/10/25 11:32:41 by sesimsek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef HARLHPP
+#define HARLHPP
 
-int main()
-{
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanA bob("Bob", club);
-	bob.attack();
-	club.setType("some other type of club");
-	bob.attack();
-	}
-	{
-	Weapon club = Weapon("crude spiked club");
-	HumanB jim("Jim");
-	jim.setWeapon(club);
-	jim.attack();
-	club.setType("some other type of club");
-	jim.attack();
-	}
-	return 0;
-}
+#include <iostream>
+#include <string>
+
+class 	Harl{
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public:
+		void complain( std::string level );
+};
+#endif
