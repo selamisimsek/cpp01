@@ -46,6 +46,8 @@
 		"span": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
-		"streambuf": "cpp"
-	}
+		"streambuf": "cpp",
+		"fstream": "cpp"
+	},
+	"C_Cpp.dimInactiveRegions": false
 }
